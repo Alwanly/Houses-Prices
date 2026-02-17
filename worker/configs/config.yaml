@@ -1,0 +1,40 @@
+server:
+  port: 8080
+  shutdown_timeout: 30
+
+mongodb:
+  uri: "mongodb://localhost:27017"
+  database: "houses_prices"
+  timeout: 10
+
+redis:
+  addr: "localhost:6379"
+  password: ""
+  db: 0
+
+logging:
+  level: "info"
+  format: "json"
+
+sites:
+  - name: "rumah123"
+    base_url: "https://www.rumah123.com/jual/jakarta-selatan/rumah/"
+    schedule: "0 0 2 * * *"  # Daily at 2:00 AM
+    enabled: true
+    rate_limit: 2  # requests per second
+    timeout: 30    # seconds
+    selectors:
+      list_item: ".card-featured"
+      title: ".card-featured__content-title"
+      price: ".card-featured__content-price"
+      location: ".card-featured__content-address"
+      detail_url: "a.card-featured__link"
+      bedrooms: ".attribute-info__item--bedroom"
+      bathrooms: ".attribute-info__item--bathroom"
+      land_area: ".attribute-info__item--land-area"
+      building_area: ".attribute-info__item--building-area"
+      description: ".property-description"
+      images: ".property-gallery img"
+      agent_name: ".agent-info__name"
+      agent_phone: ".agent-info__phone"
+      next_page: "a.pagination__next"
