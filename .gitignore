@@ -1,0 +1,54 @@
+.copilot/*
+
+# Binaries & build outputs
+bin/
+dist/
+*.exe
+*.dll
+*.so
+*.dylib
+worker/worker
+worker/worker.exe
+
+# Go test, coverage and profiling
+*.test
+*.out
+coverage.out
+coverage.txt
+coverage.html
+*.prof
+cpu.out
+mem.out
+__debug_bin
+
+# Dependencies and workspace
+vendor/
+go.work
+go.work.sum
+
+# Configuration & secrets
+worker/configs/config.yaml
+*.env
+.env.local
+.env.*.local
+
+# Logs & temporary files
+*.log
+logs/
+data/
+tmp/
+temp/
+
+# IDEs and editors
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Other
+.envrc
+node_modules/
